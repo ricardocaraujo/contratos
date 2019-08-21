@@ -29,7 +29,7 @@ public class GerenciaDao implements Dao<Gerencia> {
 	}
 
 	@Override
-	public void aciona(Gerencia gerencia) {
+	public void adiciona(Gerencia gerencia) {
 		em.persist(gerencia);	
 	}
 

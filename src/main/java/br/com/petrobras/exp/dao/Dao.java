@@ -7,7 +7,7 @@ public interface Dao<T> {
 	
 	T buscaPorId(Long id);
 	List<T> lista();
-	void aciona(T t);
+	void adiciona(T t);
 	void remove(T t);
 	void altera(T t);
 	

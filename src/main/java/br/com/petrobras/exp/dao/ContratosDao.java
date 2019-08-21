@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
@@ -17,32 +18,30 @@ public class ContratosDao implements Dao<Contratacao> {
 
 	@Override
 	public Contratacao buscaPorId(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Contratacao.class, id);
 	}
 
 	@Override
 	public List<Contratacao> lista() {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery<Contratacao> tq = em.createNamedQuery("Contratacao.findAll", Contratacao.class);
+		List<Contratacao> contratacoes = tq.getResultList();
+		return contratacoes;
 	}
 
 	@Override
-	public void aciona(Contratacao t) {
-		// TODO Auto-generated method stub
-		
+	public void adiciona(Contratacao contratacao) {
+		em.persist(contratacao);	
 	}
 
 	@Override
-	public void remove(Contratacao t) {
-		// TODO Auto-generated method stub
-		
+	public void remove(Contratacao contratacao) {
+		Contratacao c = em.find(Contratacao.class, contratacao.getId());
+		em.remove(c);
 	}
 
 	@Override
-	public void altera(Contratacao t) {
-		// TODO Auto-generated method stub
-		
+	public void altera(Contratacao contratacao) {
+		em.merge(contratacao);
 	}
 
 		
