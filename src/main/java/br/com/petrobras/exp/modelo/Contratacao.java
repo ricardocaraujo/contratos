@@ -1,13 +1,17 @@
 package br.com.petrobras.exp.modelo;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @NamedQueries({
 	@NamedQuery(name="Contratacao.findAll", query="select c from Contracao c")
@@ -24,14 +28,17 @@ public class Contratacao {
 	
 	private String nome;
 	
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private Competencia competencia;
 	
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private Situacao situacaoAtual;
 	
 	@ManyToMany
 	private List<Situacao> situacoes;
+	
+	@Temporal(TemporalType.DATE)
+	private Calendar dataInicioServico;
 	
 
 	public Contratacao() {
