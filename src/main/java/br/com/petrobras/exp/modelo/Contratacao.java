@@ -40,6 +40,9 @@ public class Contratacao {
 	@Temporal(TemporalType.DATE)
 	private Calendar dataInicioServico;
 	
+	@ManyToMany
+	private List<Tarefa> tarefa;
+	
 
 	public Contratacao() {
 		// TODO Auto-generated constructor stub
