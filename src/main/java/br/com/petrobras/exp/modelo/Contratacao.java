@@ -6,10 +6,14 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -22,6 +26,7 @@ public class Contratacao {
 	
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	private String codigo;
@@ -40,7 +45,8 @@ public class Contratacao {
 	@Temporal(TemporalType.DATE)
 	private Calendar dataInicioServico;
 	
-	@ManyToMany
+	@JoinTable(name="ContratacaoTarefa")
+	@OneToMany
 	private List<Tarefa> tarefa;
 	
 

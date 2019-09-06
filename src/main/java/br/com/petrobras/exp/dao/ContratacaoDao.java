@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import br.com.petrobras.exp.modelo.Contratacao;
 
 @Repository
-public class ContratosDao implements Dao<Contratacao> {
+public class ContratacaoDao implements Dao<Contratacao> {
 
 	@PersistenceContext
 	private EntityManager em;
