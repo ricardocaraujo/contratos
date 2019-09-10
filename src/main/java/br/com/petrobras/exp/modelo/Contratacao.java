@@ -33,6 +33,8 @@ public class Contratacao {
 	@ManyToMany
 	private List<Situacao> situacoes;
 	
+	
+	
 
 	public Contratacao() {
 		// TODO Auto-generated constructor stub
