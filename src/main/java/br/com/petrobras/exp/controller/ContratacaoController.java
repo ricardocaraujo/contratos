@@ -7,24 +7,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.petrobras.exp.dao.ContratosDao;
+import br.com.petrobras.exp.dao.ContratacaoDao;
 import br.com.petrobras.exp.modelo.Contratacao;
 
 @Controller
-public class ContratosController {
+public class ContratacaoController {
 
-	private ContratosDao contratosDao;
+	private ContratacaoDao contratosDao;
 	
 	@Autowired
-	public ContratosController(ContratosDao contratosDao) {
+	public ContratacaoController(ContratacaoDao contratosDao) {
 		this.contratosDao = contratosDao;
 	}
 	
-	@RequestMapping("listaContratos")
+	@RequestMapping("listaContratacoes")
 	public String listaContratos (Model model) {
 		List<Contratacao> contratacoes = contratosDao.lista();
 		model.addAttribute("contratacoes", contratacoes);
 		return "listaContratacoes";
+	}
+	
+	@RequestMapping("adicionaContratacao") 
+	public void adicionaContrato(Contratacao contratacao) {
+		
 	}
 
 }
