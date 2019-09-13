@@ -10,7 +10,7 @@ public class ContratacaoClient {
 	
 	private Client client;
 	private WebTarget webtarget;
-	private 
+
 	
 	public ContratacaoClient() {
 		this.client = ClientBuilder.newClient();
