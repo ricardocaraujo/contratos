@@ -21,14 +21,14 @@ public class ContratacaoController {
 	}
 	
 	@RequestMapping("listaContratacoes")
-	public String listaContratos (Model model) {
+	public String listaContratacoes (Model model) {
 		List<Contratacao> contratacoes = contratosDao.lista();
 		model.addAttribute("contratacoes", contratacoes);
 		return "listaContratacoes";
 	}
 	
 	@RequestMapping("adicionaContratacao") 
-	public void adicionaContrato(Contratacao contratacao) {
+	public void adicionaContratacao(Contratacao contratacao) {
 		
 	}
 
