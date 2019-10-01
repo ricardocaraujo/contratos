@@ -28,5 +28,6 @@ public class ContratacaoClient {
 		Response resposta = webtarget.path("/rest/contratacao").request().post(entity);		
 	}
 	
+	
 
 }
