@@ -24,7 +24,7 @@ public class ContratacaoDao implements Dao<Contratacao> {
 	@Override
 	public List<Contratacao> lista() {
 		TypedQuery<Contratacao> tq = em.createNamedQuery("Contratacao.findAll", Contratacao.class);
-		List<Contratacao> contratacoes = tq.getResultList();
+		List<Contratacao> contratacoes = (List<Contratacao>) tq.getResultList();
 		return contratacoes;
 	}
 

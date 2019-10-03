@@ -35,6 +35,13 @@ public class ContratacaoResource {
 		return new XStream().toXML(contratacoes);
 	}
 	
+	@GET
+	@Path("prepara_contratacao")
+	@Produces(MediaType.APPLICATION_XML) {
+		
+	}
+	
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_XML)
 	public Response adicionaContratacao(String c) {

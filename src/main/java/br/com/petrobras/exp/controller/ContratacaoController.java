@@ -27,8 +27,8 @@ public class ContratacaoController {
 		return "listaContratacoes";
 	}
 	
-	@RequestMapping("adicionaContratacao") 
-	public void adicionaContratacao(Contratacao contratacao) {
+	@RequestMapping("cadastroContratacao") 
+	public void cadastroContratacao(Model model) {
 		
 	}
 

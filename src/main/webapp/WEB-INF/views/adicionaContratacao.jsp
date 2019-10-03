@@ -21,7 +21,9 @@
 			<c:forEach items="${atividades}" var="atividade">
 				<div>
 					<label></label>
-				
+					
+					
+					
 				</div>
 			
 			</c:forEach>
