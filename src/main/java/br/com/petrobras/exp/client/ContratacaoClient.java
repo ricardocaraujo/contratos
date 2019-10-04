@@ -27,15 +27,9 @@ public class ContratacaoClient {
 	}
 	
 	public void adicionaContratacao(Contratacao contratacao) {
-		String xml = new XStream().toXML(contratacao);
-		Entity<String> entity = Entity.entity(xml, MediaType.APPLICATION_XML);
+		String contratacaoXml = new XStream().toXML(contratacao);
+		Entity<String> entity = Entity.entity(contratacaoXml, MediaType.APPLICATION_XML);
 		Response resposta = webtarget.path("/rest/contratacao").request().post(entity);		
 	}
 	
-	public List<Atividade> preparaCadastroContratacao() {
-		String atividadesXml = webtarget.path("rest/contratacao/prepara_contratacao").request().get(String.class);
-		List<Atividade> atividades = (ArrayList<Atividade>) new XStream().fromXML(atividadesXml);
-		return atividades;
-	}
-
 }

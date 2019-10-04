@@ -7,12 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.petrobras.exp.client.AtividadeClient;
+import br.com.petrobras.exp.client.ContratacaoClient;
 import br.com.petrobras.exp.dao.ContratacaoDao;
+import br.com.petrobras.exp.modelo.Atividade;
 import br.com.petrobras.exp.modelo.Contratacao;
 
 @Controller
 public class ContratacaoController {
 
+	
 	private ContratacaoDao contratosDao;
 	
 	@Autowired
@@ -29,7 +33,8 @@ public class ContratacaoController {
 	
 	@RequestMapping("cadastroContratacao") 
 	public void cadastroContratacao(Model model) {
-		
+		List<Atividade> atividades = new AtividadeClient().lista();
+		model.addAttribute("atividades", atividades);
 	}
 
 }

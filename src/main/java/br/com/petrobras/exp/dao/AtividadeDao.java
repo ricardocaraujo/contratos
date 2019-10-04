@@ -9,8 +9,10 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
+import br.com.petrobras.exp.modelo.Atividade;
+
 @Repository
-public class Atividade implements Dao<Atividade> {
+public class AtividadeDao implements Dao<Atividade> {
 
 	@PersistenceContext
 	private EntityManager em;

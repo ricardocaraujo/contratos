@@ -1,5 +1,6 @@
 package br.com.petrobras.exp.resources;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -13,7 +14,9 @@ import javax.ws.rs.core.Response;
 
 import com.thoughtworks.xstream.XStream;
 
+import br.com.petrobras.exp.dao.AtividadeDao;
 import br.com.petrobras.exp.dao.ContratacaoDao;
+import br.com.petrobras.exp.modelo.Atividade;
 import br.com.petrobras.exp.modelo.Contratacao;
 
 @Path("contratacao")
@@ -27,20 +30,12 @@ public class ContratacaoResource {
 		return new XStream().toXML(contratacao);
 	}
 	
-	
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	public String listaContratacoes() {
-		List<Contratacao> contratacoes = (List<Contratacao>) new ContratacaoDao().lista();
+		List<Contratacao> contratacoes = (ArrayList<Contratacao>) new ContratacaoDao().lista();
 		return new XStream().toXML(contratacoes);
 	}
-	
-	@GET
-	@Path("prepara_contratacao")
-	@Produces(MediaType.APPLICATION_XML) {
-		
-	}
-	
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_XML)
