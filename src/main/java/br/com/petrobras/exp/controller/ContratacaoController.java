@@ -31,10 +31,16 @@ public class ContratacaoController {
 		return "listaContratacoes";
 	}
 	
-	@RequestMapping("cadastroContratacao") 
-	public void cadastroContratacao(Model model) {
+	@RequestMapping("adicionaContratacaoForm") 
+	public String adicionaContratacaoForm(Model model) {
 		List<Atividade> atividades = new AtividadeClient().lista();
 		model.addAttribute("atividades", atividades);
+		return "adicionaContrataoForm";
+	}
+	
+	@RequestMapping("adicionaContratacao")
+	public void adicionaContratacao(Contratacao contratacao) {
+		System.out.println(contratacao.getNome());
 	}
 
 }
