@@ -21,11 +21,6 @@ public class Gerencia {
 	
 	private String nome;
 
-	public Gerencia(String nome) {
-		super();
-		this.nome = nome;
-	}
-
 	public int getId() {
 		return id;
 	}

@@ -10,7 +10,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class ContratacaoTarefa {
 	
-	@EmbeddedId
+	@EmbeddedId 
 	private ContratacaoTarefaPK id;
 	
 	@Temporal(TemporalType.DATE)

@@ -1,7 +1,9 @@
 package br.com.petrobras.exp.modelo;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class Situacao {
 	
 	

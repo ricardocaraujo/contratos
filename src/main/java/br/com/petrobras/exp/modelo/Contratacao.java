@@ -18,7 +18,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @NamedQueries({
-	@NamedQuery(name="Contratacao.findAll", query="select c from Contracao c")
+	@NamedQuery(name="Contratacao.findAll", query="select c from Contratacao c")
 })
 
 @Entity
@@ -46,9 +46,9 @@ public class Contratacao {
 	private Calendar dataInicioServico;
 	
 	@JoinTable(name="ContratacaoTarefa")
-	@OneToMany
-	private List<Tarefa> tarefa;
-	
+	@OneToMany 
+	private List<ContratacaoTarefa> contratacoesTarefas;
+
 
 	public Contratacao() {
 		// TODO Auto-generated constructor stub
