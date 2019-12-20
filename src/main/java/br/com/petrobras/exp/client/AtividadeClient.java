@@ -27,5 +27,6 @@ public class AtividadeClient {
 		List<Atividade> atividades = (ArrayList<Atividade>) new XStream().fromXML(atividadesXml);
 		return atividades;
 	}
+	
 
 }

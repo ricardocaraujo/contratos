@@ -33,12 +33,15 @@ public class ContratacaoController {
 		return "lista_contratacoes";
 	}
 	
+
 	@RequestMapping(value="adicionaContratacao") 
 	public String cadastroContratacao(Model model) {
 		List<Atividade> atividades = new AtividadeClient().lista();
 		model.addAttribute("atividades", atividades);
 		return "adiciona_contratacao";
 	}
+		
+	
 	
 	
 
