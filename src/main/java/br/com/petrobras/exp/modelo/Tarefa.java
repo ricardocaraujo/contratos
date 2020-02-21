@@ -62,17 +62,6 @@ public class Tarefa {
 		this.duracao = duracao;
 	}
 
-<<<<<<< HEAD
-	public List<Contratacao> getContratacoes() {
-		return contratacoes;
-	}
-
-	public void setContratacoes(List<Contratacao> contratacoes) {
-		this.contratacoes = contratacoes;
-	}
-
-=======
->>>>>>> branch 'master' of https://github.com/ricardocaraujo/Contratos.git
 	public Empregado getResponsavel() {
 		return responsavel;
 	}
