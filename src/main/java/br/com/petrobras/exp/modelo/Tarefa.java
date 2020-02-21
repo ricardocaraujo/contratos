@@ -26,8 +26,8 @@ public class Tarefa {
 	
 	@JoinTable(name="ContratacaoTarefa")
 	@OneToMany
-	private List<Contratacao> contratacoes;
-
+	private List<ContratacaoTarefa> contratacoesTarefas;
+	
 	private Empregado responsavel;
 
 	public int getId() {
@@ -62,6 +62,7 @@ public class Tarefa {
 		this.duracao = duracao;
 	}
 
+<<<<<<< HEAD
 	public List<Contratacao> getContratacoes() {
 		return contratacoes;
 	}
@@ -70,6 +71,8 @@ public class Tarefa {
 		this.contratacoes = contratacoes;
 	}
 
+=======
+>>>>>>> branch 'master' of https://github.com/ricardocaraujo/Contratos.git
 	public Empregado getResponsavel() {
 		return responsavel;
 	}
@@ -77,7 +80,13 @@ public class Tarefa {
 	public void setResponsavel(Empregado responsavel) {
 		this.responsavel = responsavel;
 	}
-	
-	
+
+	public List<ContratacaoTarefa> getContratacoesTarefas() {
+		return contratacoesTarefas;
+	}
+
+	public void setContratacoesTarefas(List<ContratacaoTarefa> contratacoesTarefas) {
+		this.contratacoesTarefas = contratacoesTarefas;
+	}
 
 }

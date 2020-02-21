@@ -40,9 +40,9 @@ public class Contratacao {
 	private Calendar dataInicioServico;
 	
 	@JoinTable(name="ContratacaoTarefa")
-	@OneToMany
-	private List<Tarefa> tarefa;
-	
+	@OneToMany 
+	private List<ContratacaoTarefa> contratacoesTarefas;
+
 
 	public Contratacao() {
 		// TODO Auto-generated constructor stub

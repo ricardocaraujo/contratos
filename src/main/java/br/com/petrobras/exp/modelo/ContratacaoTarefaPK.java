@@ -60,7 +60,5 @@ public class ContratacaoTarefaPK implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }
