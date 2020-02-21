@@ -18,7 +18,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @NamedQueries({
-	@NamedQuery(name="Contratacao.findAll", query="select c from Contracao c")
+	@NamedQuery(name="Contratacao.findAll", query="select c from Contratacao c")
 })
 
 @Entity
@@ -35,12 +35,6 @@ public class Contratacao {
 	
 	@Enumerated(EnumType.STRING)
 	private Competencia competencia;
-	
-	@Enumerated(EnumType.STRING)
-	private Situacao situacaoAtual;
-	
-	@ManyToMany
-	private List<Situacao> situacoes;
 	
 	@Temporal(TemporalType.DATE)
 	private Calendar dataInicioServico;
@@ -93,27 +87,6 @@ public class Contratacao {
 	public void setCompetencia(Competencia competencia) {
 		this.competencia = competencia;
 	}
-
-
-	public Situacao getSituacaoAtual() {
-		return situacaoAtual;
-	}
-
-
-	public void setSituacaoAtual(Situacao situacaoAtual) {
-		this.situacaoAtual = situacaoAtual;
-	}
-
-
-	public List<Situacao> getSituacoes() {
-		return situacoes;
-	}
-
-
-	public void setSituacoes(List<Situacao> situacoes) {
-		this.situacoes = situacoes;
-	}
-
 	
 	
 }

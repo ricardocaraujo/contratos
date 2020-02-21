@@ -19,13 +19,10 @@
 			<input type="text" name="codigo">
 		</div>
 		<div>
-			<c:forEach items="${atividades}" var="atividade" varStastus="id">
+			<c:forEach items="${atividades}" var="atividade" varStatus="id">
 				<div>
-					<label></label>
-					<input type="checkbox" name="atvd" >
-					
-					
-					
+					<label>${atividade}</label>
+					<input type="checkbox" name="atvd" >				
 				</div>
 			
 			</c:forEach>

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.petrobras.exp.client.AtividadeClient;
 import br.com.petrobras.exp.client.ContratacaoClient;
+import br.com.petrobras.exp.dao.AtividadeDao;
 import br.com.petrobras.exp.dao.ContratacaoDao;
 import br.com.petrobras.exp.modelo.Atividade;
 import br.com.petrobras.exp.modelo.Contratacao;
@@ -18,10 +19,13 @@ public class ContratacaoController {
 
 	
 	private ContratacaoDao contratosDao;
+	private AtividadeDao atividadesDao;
 	
 	@Autowired
-	public ContratacaoController(ContratacaoDao contratosDao) {
+	public ContratacaoController(ContratacaoDao contratosDao, 
+									AtividadeDao atividadesDao) {
 		this.contratosDao = contratosDao;
+		this.atividadesDao = atividadesDao;
 	}
 	
 	@RequestMapping("listaContratacoes")
@@ -33,9 +37,9 @@ public class ContratacaoController {
 	
 	@RequestMapping("adicionaContratacaoForm") 
 	public String adicionaContratacaoForm(Model model) {
-		List<Atividade> atividades = new AtividadeClient().lista();
+		List<Atividade> atividades = this.atividadesDao.lista();
 		model.addAttribute("atividades", atividades);
-		return "adicionaContrataoForm";
+		return "adicionaContratacao";
 	}
 	
 	@RequestMapping("adicionaContratacao")

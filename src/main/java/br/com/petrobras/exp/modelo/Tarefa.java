@@ -1,5 +1,8 @@
 package br.com.petrobras.exp.modelo;
 
+import java.util.List;
+
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -7,6 +10,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+@Entity
 public class Tarefa {
 	
 	@Id
@@ -22,8 +26,8 @@ public class Tarefa {
 	
 	@JoinTable(name="ContratacaoTarefa")
 	@OneToMany
-	private Contratacao contratacao;
-	
+	private List<Contratacao> contratacoes;
+
 	private Empregado responsavel;
 
 	public int getId() {
@@ -58,12 +62,12 @@ public class Tarefa {
 		this.duracao = duracao;
 	}
 
-	public Contratacao getContratacao() {
-		return contratacao;
+	public List<Contratacao> getContratacoes() {
+		return contratacoes;
 	}
 
-	public void setContratacao(Contratacao contratacao) {
-		this.contratacao = contratacao;
+	public void setContratacoes(List<Contratacao> contratacoes) {
+		this.contratacoes = contratacoes;
 	}
 
 	public Empregado getResponsavel() {
