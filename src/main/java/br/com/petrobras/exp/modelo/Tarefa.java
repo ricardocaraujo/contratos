@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -28,6 +29,7 @@ public class Tarefa {
 	@OneToMany
 	private List<ContratacaoTarefa> contratacoesTarefas;
 	
+	@ManyToOne
 	private Empregado responsavel;
 
 	public int getId() {
