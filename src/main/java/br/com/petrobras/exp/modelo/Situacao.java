@@ -12,8 +12,6 @@ public class Situacao {
 	
 	private String descricao;
 	
-	private Gerencia responsavel;
-
 	public Situacao() {
 		// TODO Auto-generated constructor stub
 	}

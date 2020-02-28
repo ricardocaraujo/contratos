@@ -3,7 +3,9 @@ package br.com.petrobras.exp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,17 +19,20 @@ import br.com.petrobras.exp.modelo.Atividade;
 import br.com.petrobras.exp.modelo.Contratacao;
 
 @Controller
+@Transactional
 public class ContratacaoController {
 	
-	private ContratacaoDao contratosDao;
-	private AtividadeDao atividadesDao;
-	
 	@Autowired
-	public ContratacaoController(ContratacaoDao contratosDao, 
-									AtividadeDao atividadesDao) {
+	@Qualifier("contratacaoDao")
+	private ContratacaoDao contratosDao;
+	
+	//@Autowired
+	//private AtividadeDao atividadesDao;
+	/*	
+	public ContratacaoController( ContratacaoDao contratosDao) {
 		this.contratosDao = contratosDao;
 		this.atividadesDao = atividadesDao;
-	}
+	}*/
 	
 	@RequestMapping(value="salvaContratacao")
 	public String listaContratacoes(@ModelAttribute Contratacao contratacao, Model model) {
