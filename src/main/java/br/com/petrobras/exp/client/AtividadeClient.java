@@ -23,7 +23,7 @@ public class AtividadeClient {
 	}
 	
 	public List<Atividade> lista() {
-		String atividadesXml = webtarget.path("/rest/atividade").request().get(String.class);
+		String atividadesXml = webtarget.path("ControleContratos/rest/atividade").request().get(String.class);
 		List<Atividade> atividades = (ArrayList<Atividade>) new XStream().fromXML(atividadesXml);
 		return atividades;
 	}
