@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,14 +21,14 @@ import br.com.petrobras.exp.modelo.Contratacao;
 
 @Controller
 @Transactional
+@RequestMapping("/contratacao")
 public class ContratacaoController {
 	
 	@Autowired
-	@Qualifier("contratacaoDao")
 	private ContratacaoDao contratosDao;
 	
-	//@Autowired
-	//private AtividadeDao atividadesDao;
+	@Autowired
+	private AtividadeDao atividadesDao;
 	/*	
 	public ContratacaoController( ContratacaoDao contratosDao) {
 		this.contratosDao = contratosDao;
@@ -44,7 +45,8 @@ public class ContratacaoController {
 	
 	@RequestMapping(value="adicionaContratacao") 
 	public String cadastroContratacao(Model model) {
-		List<Atividade> atividades = new AtividadeClient().lista();
+		List<Atividade> atividades = atividadesDao.lista();
+		//List<Atividade> atividades = new AtividadeClient().lista();
 		model.addAttribute("atividades", atividades);
 		return "adiciona_contratacao";
 	}

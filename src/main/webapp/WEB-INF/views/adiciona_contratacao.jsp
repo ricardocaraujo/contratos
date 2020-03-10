@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form:form method="POST" commandName="contratacao" action="lista">
+	<form:form action="${s:mvcUrl('CC#listaContratacoes').build()}" method="POST">
 		<div>
 			<label>Objeto</label>
 			<input type="text" name="nome">
@@ -19,7 +20,7 @@
 			<input type="text" name="codigo">
 		</div>
 		<div>
-			<form:checkboxes path={atividades} items="${atividades.nome} "/>
+			<form:checkboxes items="${atividades.descricao}" itemLabel="id" path="atividade"  />
 		</div>
 		<button type="submit">Cadastrar</button>		
 	</form:form>
