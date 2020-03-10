@@ -22,7 +22,7 @@
 			<property name="suffix"	value=".jsp"/>
 		</bean>
 		
-		<jpa:repositories base-package="br.com.petrobras.exp.dao"/>
+		<!-- <jpa:repositories base-package="br.com.petrobras.exp.dao"/>-->
 		
 		<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
 			<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
